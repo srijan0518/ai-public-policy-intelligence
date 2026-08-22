@@ -1,0 +1,16 @@
+streamlit>=1.40
+langchain>=0.3
+langchain-community>=0.3
+langchain-core>=0.3
+langchain-text-splitters>=0.3
+langchain-groq>=0.2
+langchain-openai>=0.2
+langchain-huggingface>=0.1
+sentence-transformers>=3.0
+faiss-cpu>=1.8
+pypdf>=5.0
+python-dotenv>=1.0
+transformers>=4.45
+torch>=2.0
+spacy>=3.7
+plotly>=5.20

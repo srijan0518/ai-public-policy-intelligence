@@ -3,32 +3,68 @@
 An AI-powered public-policy intelligence platform for extracting, classifying, scoring, comparing, and explaining policy documents through an interactive dashboard.
 
 ## Core capabilities
+
 - Policy document ingestion and preprocessing
 - Named Entity Recognition (NER)
-- Zero-shot policy-topic classification
-- Explainable policy importance/risk scoring
+- Zero-shot policy-domain classification
+- Explainable policy importance scoring
 - Retrieval-Augmented Generation (RAG) question answering
 - Policy comparison and change analysis
 - Audience-adaptive explanations
 - Interactive intelligence dashboard
 
-## Project structure
+## Repository structure
+
 ```text
-src/        Core analysis and intelligence modules
-assets/     Dashboard and analysis screenshots
-config/     Configuration templates
-data/       Local sample-data placeholder
-models/     Model/cache placeholder
-docs/       Synopsis and final report
-notebooks/  Experiment notebooks
+ai-public-policy-intelligence/
+├── app.py
+├── requirements.txt
+├── setup.bat
+├── .env.example
+├── .gitignore
+├── src/
+│   ├── document_processor.py
+│   ├── nlp_analyzer.py
+│   ├── importance_scorer.py
+│   ├── rag_engine.py
+│   ├── llm_service.py
+│   └── policy_comparator.py
+├── assets/
+│   └── dashboard.html
+└── docs/
+    ├── synopsis/
+    │   └── PROJECT_SYNOPSIS.md
+    └── report/
+        └── PROJECT_REPORT.md
 ```
 
-## Setup
+## Run locally
 
-Create a virtual environment and install dependencies from `requirements.txt`.
+```bash
+python -m venv .venv
+# Windows
+.venv\Scripts\activate
+pip install -r requirements.txt
+python -m spacy download en_core_web_sm
+```
 
-Copy `.env.example` to `.env` and provide your own API/model credentials if required. **Never commit secrets.**
+Copy `.env.example` to `.env`, add your own LLM credentials, then run:
 
-## Status
+```bash
+streamlit run app.py
+```
 
-Academic/project prototype prepared for BSERC project submission. Replace sample connectors and model configuration with the deployment-specific services before production use.
+## Dashboard showcase
+
+`assets/dashboard.html` contains the rendered dashboard showcase used for the project documentation. The report's Figure 9.1 is the actual rendered dashboard screenshot; Figure 9.2 is retained separately in the report as the policy-analysis/explainable-score view.
+
+## Documentation
+
+- [Project synopsis](docs/synopsis/PROJECT_SYNOPSIS.md)
+- [Project report](docs/report/PROJECT_REPORT.md)
+
+## Important note
+
+This is an academic decision-support prototype. It does not provide legal advice, make governmental decisions, or claim that illustrative dashboard values are experimentally validated results. Always verify important policy information against official source documents.
+
+**Never commit `.env`, API keys, passwords, model credentials, or other secrets.**
